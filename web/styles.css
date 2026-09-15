@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 14px; /* >= 10pt */
+  line-height: 1.5;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 60%, #000 100%);
+  color: #e5e7eb;
+}
+
+.app-header {
+  padding: 16px 20px 12px;
+  background: rgba(15, 23, 42, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.app-header h1 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.app-main {
+  max-width: 480px;
+  margin: 12px auto 24px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 14px 14px 16px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+}
+
+.input-card h2,
+.output-card h2 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+}
+
+.help-text {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Internal textarea is hidden from normal users */
+#conditionsInput {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  padding: 10px 11px;
+  resize: vertical;
+  background: #020617;
+  color: #e5e7eb;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px #38bdf8;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.button-row button {
+  flex: 1;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  font-weight: 600;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease;
+}
+
+button.secondary {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error-message {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #f97373;
+}
+
+#documentInput {
+  display: none;
+}
+
+.obligations-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+
+.obligation {
+  padding: 12px 12px 10px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 64, 175, 0.7);
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+    rgba(15, 23, 42, 0.96);
+}
+
+.obligation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+}
+
+.obligation--reporting {
+  border-color: #38bdf8;
+}
+
+.obligation--travel {
+  border-color: #f97316;
+}
+
+.obligation--substance_use {
+  border-color: #10b981;
+}
+
+.obligation--program {
+  border-color: #8b5cf6;
+}
+
+.obligation--contact_restriction {
+  border-color: #ef4444;
+}
+
+.obligation--financial {
+  border-color: #facc15;
+}
+
+.original-text {
+  font-style: italic;
+  color: #9ca3af;
+  font-size: 13px;
+  margin: 2px 0 6px 0;
+}
+
+.obligation-meta {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.explanation {
+  margin-top: 4px;
+  padding: 8px 9px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px dashed rgba(148, 163, 184, 0.7);
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.empty-state {
+  margin: 8px 0 0 0;
+  padding: 10px 11px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.summary-line {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+}
+
+.summary-disclaimer {
+  color: #9ca3af;
+}
+
+.app-footer {
+  max-width: 480px;
+  margin: 0 auto 16px;
+  padding: 0 16px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.privacy-card {
+  margin-top: 4px;
+}
+
+.privacy-list {
+  margin: 4px 0 0 0;
+  padding-left: 20px;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.privacy-list li {
+  margin-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+  .app-main {
+    margin-top: 20px;
+  }
+}

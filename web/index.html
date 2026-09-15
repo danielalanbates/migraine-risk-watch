@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <title>Conditions Companion</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Conditions Companion</h1>
+      <p class="subtitle">A gentle guide to understanding your supervision rules.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="card input-card">
+        <h2>Upload your papers</h2>
+        <p class="help-text">
+          Take a clear photo or upload a PDF of the supervision papers you received when you left prison or met with your officer.
+          Well highlight the main rules in plain language.
+        </p>
+
+        <!-- Hidden text input kept only for internal testing; not shown to users -->
+        <textarea id="conditionsInput" rows="6"></textarea>
+
+        <input
+          type="file"
+          id="documentInput"
+          accept="image/*,application/pdf"
+          aria-label="Upload a photo or PDF of your supervision papers"
+        />
+
+        <div class="button-row">
+          <button id="uploadButton" type="button">Upload your papers</button>
+          <button id="sampleButton" type="button" class="secondary">Try a sample</button>
+        </div>
+        <p id="errorMessage" class="error-message" aria-live="polite"></p>
+      </section>
+
+      <section class="card output-card">
+        <h2>Summary</h2>
+        <div id="summaryOutput" class="summary-output"></div>
+
+        <h2>Possible obligations</h2>
+        <ul id="obligationsList" class="obligations-list"></ul>
+      </section>
+
+      <section class="card privacy-card">
+        <h2>Privacy & safety</h2>
+        <ul class="privacy-list">
+          <li><strong>Your document is for you.</strong> Its used only to help you see your rules in simple language.</li>
+          <li><strong>No accounts, no tracking in this demo.</strong> This version does not write your file or text into a database.</li>
+          <li><strong>Not shared with the system.</strong> We do not send your information to courts, supervision, or employers. If AI services are connected, your text may be sent to those providers only to generate explanations.</li>
+          <li><strong>This is not legal advice.</strong> Always confirm details with your lawyer or supervising officer.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        This is an experimental tool meant to support people returning home from prison or jail. It does not replace your lawyer, case manager, or supervising officer.
+      </p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
